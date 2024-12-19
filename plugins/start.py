@@ -109,7 +109,7 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton('❓ ʜᴇʟᴘ ❓', callback_data='help')
                 ]])
         if START_PIC:
-            await message.reply_photo(START_PIC, caption=Script.START_MSG.format(message.from_user.mention), reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML, has_spoiler=True)       
+            await message.reply_photo(START_PIC, caption=Script.START_MSG.format(message.from_user.mention), reply_markup=reply_markup, has_spoiler=True)       
         else:
             await message.reply_text(text=Script.START_MSG.format(message.from_user.mention), reply_markup=reply_markup, disable_web_page_preview=True, parse_mode=enums.ParseMode.HTML)
         return
