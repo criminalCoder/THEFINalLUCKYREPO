@@ -1,5 +1,8 @@
 class Script(object):
-    START_MSG = """<b>Hello, {},!</b>\n\n<b><blockquote>I’m advance version of cricket match link converter bot, instead of this i can store telegram files and generate direct download/watch link for u ❤ </blockquote></b>\n<blockquote>& ᴛʜᴇ ᴏᴡɴᴇʀ ɪs 🧩 <a href='https://t.me/hey_lucky19'> ʟ ᴜ ᴄ ᴋ ʏ </a> </blockquote>"""
+    START_MSG = """<b>Hello, {} !</b>
+<blockquote>I’m advance version of cricket match link converter bot, instead of this i can store telegram files and generate direct download/watch link for u ❤ </blockquote>
+<blockquote>& ᴛʜᴇ ᴏᴡɴᴇʀ ɪs 🧩 <a href='https://t.me/hey_lucky19'> ʟ ᴜ ᴄ ᴋ ʏ </a></blockquote>
+"""
 
     HELP_TEXT = """<b>📌 ʜᴇʟᴘ ɢᴜɪᴅᴇ 💤</b>
 👋 <i>Hey {}! just send me any direct link of cricket match, i will convert the link and make it watchable for you !\n\nYou can stream online on my server ❤
