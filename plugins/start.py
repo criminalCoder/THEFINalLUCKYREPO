@@ -96,6 +96,12 @@ async def start_command(client: Client, message: Message):
 
         return
     else:
+        START_MSGs = """<b>Hello, {},!</b>
+    
+<b><blockquote>I’m advance version of cricket match link converter bot, instead of this i can store telegram files and generate direct download/watch link for u ❤ </blockquote></b>
+
+<blockquote>& ᴛʜᴇ ᴏᴡɴᴇʀ ɪs 🧩 <a href='https://t.me/hey_lucky19'> ʟ ᴜ ᴄ ᴋ ʏ </a></blockquote>
+"""
         reply_markup=InlineKeyboardMarkup([
                 [
                 InlineKeyboardButton('♻ᴜᴘᴅᴀᴛᴇꜱ ', url='https://telegram.me/cricketclipsprovider'),
@@ -109,7 +115,7 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton('❓ ʜᴇʟᴘ ❓', callback_data='help')
                 ]])
         if START_PIC:
-            await message.reply_photo(START_PIC, caption=Script.START_MSG.format(message.from_user.mention), reply_markup=reply_markup, has_spoiler=True)       
+            await message.reply_photo(START_PIC, caption=START_MSGs.format(message.from_user.mention), reply_markup=reply_markup, has_spoiler=True)       
         else:
             await message.reply_text(text=Script.START_MSG.format(message.from_user.mention), reply_markup=reply_markup, disable_web_page_preview=True, parse_mode=enums.ParseMode.HTML)
         return
