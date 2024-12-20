@@ -6,9 +6,17 @@ from helper_func import get_readable_time
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import hashlib
 from config import *
+from database.database import present_user, add_user
 
 @Client.on_message(filters.command('stats') & filters.user(ADMINS))
 async def stats(bot: Client, message: Message):
+    id = message.from_user.id
+    if not await present_user(id):
+        try:
+            await add_user(id)
+        except Exception as e:
+            print(f"Error adding user: {e}")
+            pass
     now = datetime.now()
     delta = now - bot.uptime
     time = get_readable_time(delta.seconds)
@@ -34,7 +42,12 @@ async def receive_link(client: Client, message: Message):
     """
     user_id = message.from_user.id
     link = message.text.strip()
-
+    if not await present_user(user_id):
+        try:
+            await add_user(user_id)
+        except Exception as e:
+            print(f"Error adding user: {e}")
+            pass
     # Validate link format (basic validation)
     if not link.startswith("http"):
         await message.reply("❌ ɪɴᴠᴀʟɪᴅ ʟɪɴᴋ. ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴀ ᴠᴀʟɪᴅ ᴜʀʟ.")

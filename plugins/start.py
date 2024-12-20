@@ -122,6 +122,13 @@ async def start_command(client: Client, message: Message):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
+    user_id = message.from_user.id
+    if not await present_user(user_id):
+        try:
+            await add_user(user_id)
+        except Exception as e:
+            print(f"Error adding user: {e}")
+            pass
     try:
         invite_link = await client.create_chat_invite_link(int(FORCE_SUB_CHANNEL), creates_join_request=False)
         invite_link2 = await client.create_chat_invite_link(int(FORCE_SUB_CHANNEL2), creates_join_request=False)
@@ -161,6 +168,19 @@ async def not_joined(client: Client, message: Message):
 
 @Client.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Client, message: Message):
+    user_id = message.from_user.id
+    lazyid = message.from_user.id
+
+    if not await present_user(user_id):
+        try:
+            await add_user(user_id)
+        except Exception as e:
+            print(f"Error adding user: {e}")
+            pass
+    
+    if not await verify_user(lazyid):
+        return await message.reply("⛔ You are not authorized to use this bot.")
+    
     msg = await client.send_message(chat_id=message.chat.id, text=f"Processing...")
     users = await full_userbase()
     await msg.edit(f"{len(users)} Users Are Using This Bot")
@@ -168,6 +188,19 @@ async def get_users(client: Client, message: Message):
 @Client.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Client, message: Message):
     if message.reply_to_message:
+        user_id = message.from_user.id
+        lazyid = message.from_user.id
+    
+        if not await present_user(user_id):
+            try:
+                await add_user(user_id)
+            except Exception as e:
+                print(f"Error adding user: {e}")
+                pass
+        
+        if not await verify_user(lazyid):
+            return await message.reply("⛔ You are not authorized to use this bot.")
+        
         query = await full_userbase()
         broadcast_msg = message.reply_to_message
         total = 0

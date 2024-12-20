@@ -7,11 +7,18 @@ from pyrogram.errors import FloodWait
 # from bot import Bot
 from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from helper_func import encode
+from database.database import present_user, add_user
 
 @Client.on_message(filters.private & (filters.document | filters.video | filters.audio) & filters.user(ADMINS) & ~filters.command(['start','users','broadcast','batch','genlink','stats']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote = True)
-    
+    id = message.from_user.id
+    if not await present_user(id):
+        try:
+            await add_user(id)
+        except Exception as e:
+            print(f"Error adding user: {e}")
+            pass
     try:
         post_message = await message.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as e:
