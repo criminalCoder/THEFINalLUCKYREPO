@@ -70,7 +70,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif data == "about":
         await query.message.edit_text(
-            text=Script.ABOUT_TXT.format(client.mention),
+            text=Script.ABOUT_TXT.format(client.username),
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup( [[
                 InlineKeyboardButton("🔒 ᴄʟᴏꜱᴇ •", callback_data = "close"),
@@ -80,8 +80,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif data == "dev":
+        me = client.get_me()
+        username = me.username
         await query.message.edit_text(
-            text=Script.DEVELOPER_TEXT.format(query.from_user.mention, client.mention, client.mention),
+            text=Script.DEVELOPER_TEXT.format(query.from_user.mention, username, username) + f"/n{me.mention if me.mention else None}",
             reply_markup=InlineKeyboardMarkup( [[
                 InlineKeyboardButton("🔒 ᴄʟᴏꜱᴇ", callback_data = "close"),
                 InlineKeyboardButton("◀️ ʙᴀᴄᴋ", callback_data = "start")
@@ -90,6 +92,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML 
         )
+
     elif data == "own":
         await query.message.edit_text(
             text=Script.OWNER_TEXT.format(TEL_USERNAME, TEL_NAME),
