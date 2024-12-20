@@ -9,7 +9,6 @@ class Script(object):
 """
     ABOUT_TXT = """
 ╭───────────⍟
-├🤖 ᴍʏ ɴᴀᴍᴇ : {}
 ├👑 ᴏᴡɴᴇʀ : <a href="https://t.me/hey_lucky19">ʟ ᴜ ᴄ ᴋ ʏ</a>
 ├🦋 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href="https://t.me/LazyDeveloperr">ʟᴀᴢʏᴅᴇᴠᴇʟᴏᴘᴇʀʀ</a>
 ├📕 ʟɪʙʀᴀʀʏ : <a href="https://github.com/pyrogram">ᴘʏʀᴏɢʀᴀᴍ</a>
@@ -19,7 +18,7 @@ class Script(object):
 ╰───────────────⍟ 
 """
     DEVELOPER_TEXT = """<b>👨‍💻 ᴀʙᴏᴜᴛ ᴅᴇᴠ:</b>
-<i>ʜᴇʟʟᴏ {}, ɪ'ᴍ ᴛʜᴇ ᴏɴʟʏ <a href='https://telegram.me/LazyDeveloperr'>ʟᴀᴢʏᴅᴇᴠᴇʟᴏᴘᴇʀʀ</a>, ᴛʜᴇ ᴄʀᴇᴀᴛᴏʀ ʙᴇʜɪɴᴅ {}</i>
+<i>ʜᴇʟʟᴏ {}, ɪ'ᴍ ᴛʜᴇ ᴏɴʟʏ <a href='https://telegram.me/LazyDeveloperr'>ʟᴀᴢʏᴅᴇᴠᴇʟᴏᴘᴇʀʀ</a>, ᴛʜᴇ ᴄʀᴇᴀᴛᴏʀ ʙᴇʜɪɴᴅ ᴛʜɪs ʙᴏᴛ</i>
 
 
 <b>🎯 ᴍʏ ᴍɪssɪᴏɴ:</b>
@@ -35,7 +34,7 @@ class Script(object):
 • 🎊 <a href="https://youtube.com/@LazyDeveloperr">ʏᴏᴜᴛᴜʙᴇ</a>
 • 🍟 <a href="https://telegram.com/LazyDeveloperr">ᴛᴇʟᴇɢʀᴀᴍ</a>
 
-<i>ᴛʜᴀɴᴋs ꜰᴏʀ ᴜsɪɴɢ {}! ❤️</i>
+<i>ᴛʜᴀɴᴋs ꜰᴏʀ ᴜsɪɴɢ ❤️</i>
 """
 
     OWNER_TEXT = """

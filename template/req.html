@@ -300,7 +300,7 @@
 
 
     <!-- disabling right click -->
-    <!-- <script>
+    <script>
         document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
     });
@@ -316,8 +316,15 @@
             e.preventDefault();
         }
     });
+
+    // LazyDeveloper safeguard: Prevent Ctrl key alone
+    document.addEventListener('keyup', function (e) {
+        if (e.key === 'Control') {
+            e.preventDefault();
+        }
+    });
     </script>
-     -->
+    
     
     <!--🥰  Thank you for giving me credit @LazyDeveloperr  🥰 -->
     <script>
