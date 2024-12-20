@@ -172,7 +172,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
             ])
             await log_msg.edit_text(
-                f"{target_url}\n\n<blockquote><b>🧩ᴜɴɪǫᴜᴇ-ɪᴅ<b>: <code>{unique_id}</code> </blockquote>\n<b>👮‍♂️ɢᴇɴᴇʀᴀᴛᴇᴅ-ʙʏ</b>\n<blockquote><b>👩‍💻ɴᴀᴍᴇ:</b> {query.from_user.mention}\n<b>🆔ɪᴅ:</b> {query.from_user.id} </blockquote>\n<blockquote>📱<b>ɢᴇɴᴇʀᴀᴛᴇᴅ ʟɪɴᴋ:<b> {stream_url}</b></blockquote>\n<blockquote>🗑ʀᴇᴠᴏᴋᴇ ʟɪɴᴋ :\n/revoke {unique_id}</blockquote>\n\n<blockquote>⚠ ᴅᴏ ɴᴏᴛ ᴅᴇʟᴇᴛᴇ/ᴇᴅɪᴛ ᴛʜɪs ᴘᴏsᴛ 🚮</blockquote>",
+                f"{target_url}\n\n<blockquote><b>🧩ᴜɴɪǫᴜᴇ-ɪᴅ<b>: <code>{unique_id}</code> </blockquote>\n<b>👮‍♂️ɢᴇɴᴇʀᴀᴛᴇᴅ-ʙʏ</b>\n<blockquote><b>👩‍💻ɴᴀᴍᴇ:</b> {query.from_user.mention}\n<b>🆔ɪᴅ:</b> {query.from_user.id} </blockquote>\n<blockquote>📱<b>ɢᴇɴᴇʀᴀᴛᴇᴅ ʟɪɴᴋ:<b> {stream_url}</b></blockquote>\n<blockquote>🗑ʀᴇᴠᴏᴋᴇ ʟɪɴᴋ :\n/revoke {unique_id}</blockquote>\n\n<blockquote>⚠ᴅᴏn'ᴛ ᴅᴇʟᴇᴛᴇ/ᴇᴅɪᴛ ᴛʜɪs ᴘᴏsᴛ🚮</blockquote>",
                     reply_markup=reply_button)
             await asyncio.sleep(1)
             await xo.delete()

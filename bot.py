@@ -26,6 +26,8 @@ lazydeveloperxbot.LOGGER = LOGGER
 
 async def lazyDeveloperStartBOT():
     print('\n')
+    print('================================  ')
+    print('================================  ')
     print('|==>❤ Powered by - The one & Only LAZYDEVELOPER ❤<==||')
     print('|==> Initalizing Telegram Bot... ')
     usr_bot_me = await lazydeveloperxbot.get_me()

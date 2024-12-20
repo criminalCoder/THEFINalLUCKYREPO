@@ -146,7 +146,7 @@ async def not_joined(client: Client, message: Message):
             [
                 InlineKeyboardButton(
                     text='♻ʀᴇʟᴏᴀᴅ♻',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
+                    url=f"https://t.me/{BOT_USERNAME}?start={message.command[1]}"
                 )
             ]
         )
@@ -259,7 +259,7 @@ async def delete_files(messages, client, k):
     command_part = k.command[1] if k.command and len(k.command) > 1 else None
 
     if command_part:
-        button_url = f"https://t.me/{client.username}?start={command_part}"
+        button_url = f"https://t.me/{BOT_USERNAME}?start={command_part}"
         keyboard = InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("ɢᴇᴛ ғɪʟᴇ ᴀɢᴀɪɴ!", url=button_url)]

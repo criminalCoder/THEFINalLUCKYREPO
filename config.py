@@ -77,6 +77,7 @@ TEL_USERNAME = os.environ.get("TEL_USERNAME", "HeY_Lucky19")
 TEL_NAME = os.environ.get("TEL_NAME", "🦋 Lucky 🧩")
 #start message
 START_PIC = os.environ.get("START_PIC", "")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
 try:
     ADMINS=[5965340120]
     for x in (os.environ.get("ADMINS", "").split()):
