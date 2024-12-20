@@ -26,12 +26,12 @@ lazydeveloperxbot.LOGGER = LOGGER
 
 async def lazyDeveloperStartBOT():
     print('\n')
-    print('|==> Powered by - The one & Only LAZYDEVELOPER <==||')
-    print('//// Initalizing Telegram Bot  ')
+    print('|==>❤ Powered by - The one & Only LAZYDEVELOPER ❤<==||')
+    print('|==> Initalizing Telegram Bot... ')
     usr_bot_me = await lazydeveloperxbot.get_me()
     lazydeveloperxbot.uptime = datetime.now()
     await initialize_clients()
-    print('//// Processing basic inits....  ')
+    print('|==> Processing basic inits....  ')
     print('================================  ')
     print('================================  ')
 
@@ -41,10 +41,7 @@ async def lazyDeveloperStartBOT():
         test = await lazydeveloperxbot.send_message(chat_id = db_channel.id, text = "Test Message")
         await test.delete()
     except Exception as e:
-        lazydeveloperxbot.LOGGER(__name__).warning(e)
-        lazydeveloperxbot.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-        lazydeveloperxbot.LOGGER(__name__).info("\nBot Stopped. Join channel https://t.me/LazyDeveloper for support")
-        # sys.exit() #if bot is admin & you are getting admin issue again and again then u can also remove this line of code 
+        print(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
 
     lazydeveloperxbot.set_parse_mode(ParseMode.HTML)
     print("[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[❤]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]")
